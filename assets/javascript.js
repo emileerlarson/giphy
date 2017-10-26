@@ -22,7 +22,14 @@ $('#searchGiphy').on('click', function(event){
           method: "GET"
         }).done(function(response) {
           console.log(response)
+          var pic = $('<img>')
+
+          pic.attr('src', response.data[i].url)
+
+          $('#giphyDisplay').html(pic)
+
       });
+       $('#term').val("")
 });		
 
 function createButton(){
